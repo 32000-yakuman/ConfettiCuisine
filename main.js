@@ -83,12 +83,11 @@ app.use(async (req, res, next) => {
 // ★★★ ここより前に置かないと絶対に効かない ★★★
 app.use("/", router)
 
-
 app.use(errorController.logErrors);
 app.use(errorController.respondNoResourceFound);
 app.use(errorController.respondInternalError);
 
-const server = app.listen(app.get("port"), () => {
+const server = app.listen(app.get("port"), "0.0.0.0", () => {
     console.log(`Server running at http://localhost:${app.get("port")}`)
 }),
     io = require("socket.io")(server),
