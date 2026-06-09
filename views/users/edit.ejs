@@ -1,0 +1,19 @@
+<%# 既存のユーザー属性値を編集フォームに適用する %>
+<div class="data-form">
+    <form method="POST" action="<%= `/users/${user._id}/update?_method=PUT` %>">
+        <h2>Edit user</h2>
+        <label for="inputFirstName">First Name</label>
+        <input type="text" name="first" id="inputFirstName"
+               value="<%= user.name.first %>" placeholder="First" autofocus><br>
+        <label for="inputLastName">Last Name</label>
+        <input type="text" name="last" id="inputLastName"
+               value="<%= user.name.last %>" placeholder="Last"><br>
+        <label for="inputEmail">Email</label>
+        <input type="email" name="email" id="inputEmail"
+               value="<%= user.email %>" placeholder="Email address" required><br>
+        <label for="inputMembershipNumber">Membership Number</label>
+        <input type="text" name="membershipNumber" id="inputMembershipNumber" pattern="^\d{5}$"
+               value="<%= user.membershipNumber %>"  placeholder="Membership Number" required><br>
+        <button type="submit">Update</button>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<h2>Users Table</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Membership Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(user => { %>
+    <tr>
+      <td>
+        <%# ユーザの名前をクリックすると、そのユーザの詳細ページに遷移するようにリンクを設定 %>
+        <a href="<%= `/users/${user._id}` %>">
+          <%= user.fullName %>
+        </a>
+      </td>
+      <td><%= user.email %></td>
+      <td><%= user.membershipNumber %></td>
+      <td>
+        <%# ユーザの編集ページへのリンクを設定 %>
+        <a class="button" href="<%= `/users/${user._id}/edit` %>">
+          Edit
+        </a>
+      </td>
+      <td>
+          <%# ユーザの削除を行うフォームを設定 %>
+          <form action="/users/<%= user._id %>/delete?_method=DELETE" method="POST" style="display:inline;">
+              <button class="button" onclick="return confirm('Are you sure you want to delete this user?')">
+                  Delete
+              </button>
+          </form>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

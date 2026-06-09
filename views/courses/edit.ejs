@@ -1,0 +1,22 @@
+<%# 既存のユーザー属性値を編集フォームに適用する %>
+<div class="data-form">
+    <form method="POST" action="<%=`/courses/${course._id}/update?_method=PUT`%>">
+       <h2>Edit Course</h2>
+       <label for="inputTitle">Title</label>
+       <input type="text" name="title" id="inputTitle"
+       value="<%= course.title %>" placeholder="Title" autofocus><br>
+       <label for="inputDescription">Description</label>
+       <input type="text" name="description" id="inputDescription"
+       value="<%= course.description %>" placeholder="Description" required><br>
+       <label for="inputItems">Items</label>
+       <input type="text" name="items" id="inputItems"
+       value="<%= course.items.join(', ') %>" placeholder="Items (comma-separated)" required><br>
+       <label for="inputFee">Fee</label>
+       <input type="text" name="fee" id="inputFee"
+       value="<%= course.fee %>" placeholder="Fee" required><br>
+       <label for="inputMembershipNumber">CourseCode</label>
+       <input type="text" name="membershipNumber" id="inputMembershipNumber"
+       value="<%= course.membershipNumber %>" placeholder="Membership Number" required><br>
+       <button type="submit">Save</button>
+    </form>
+</div>

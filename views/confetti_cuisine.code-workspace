@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../confetti_cuisine_proto"
+		},
+		{
+			"path": "../../express_templates"
+		}
+	],
+	"settings": {}
+}

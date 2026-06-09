@@ -1,0 +1,19 @@
+<!-- 連絡用フォーム -->
+<div class="container">
+    <div class="contact-info"><img src="/images/graph.png" alt=""></div>
+    <div class="contact-info">
+        <h2>Contact Us</h2>
+            <p>If you have any questions or feedback, feel free to reach out to us!</p>
+        </div>
+        <!--HPのルートにEメールを送出するフォーム-->
+        <form action="/subscribe" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Name"><br>
+            <label for="email">Email</label>
+            <input type="email" name="email" placeholder="Email"><br>
+            <label for="membershipNumber">Membership Number</label>
+            <input type="text" name="membershipNumber" placeholder="membership number" pattern="[0-9]5"><br>
+            <input type="submit" name="Submit">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="data-form">
+    <form action="/courses/create" method="POST">
+        <h2>Create a new course</h2>
+        <label for="inputTitle">Title</label>
+        <input type="text" name="title" id="inputTitle" placeholder="Title" autofocus><br>
+        <label for="inputDescription">Description</label>
+        <input type="text" name="description" id="inputDescription" placeholder="Description" required><br>
+        <label for="inputItems">Items</label>
+        <input type="text" name="items" id="inputItems" placeholder="Items" required><br>
+        <label for="inputFee">Fee</label>
+        <input type="number" name="fee" id="inputFee" placeholder="Fee" step="0.01" required><br>
+        <label for="membershipNumber">CourseCode</label>
+        <input type="text" name="membershipNumber" id="inputMembershipNumber" placeholder="Membership" required><br>
+        <button type="submit" class="button">Create Course</button>
+    </form>
+</div>
