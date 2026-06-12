@@ -18,7 +18,7 @@ require("dotenv").config();
 mongoose.Promise = global.Promise
 
 mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log("MongoDB connected"))
+    .then(() => console.log(`Connected to MongoDB at ${process.env.MONGO_URI}`))
     .catch(err => console.error("MongoDB connection error:", err))
 
 const db = mongoose.connection;
