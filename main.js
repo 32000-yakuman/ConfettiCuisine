@@ -13,11 +13,11 @@ const express             = require("express"),
     Subscriber            = require("./models/subscriber"),
     User                  = require("./models/user"),
     errorController       = require("./controllers/errorController")
-    
+
+require("dotenv").config();
 mongoose.Promise = global.Promise
 
-mongoose.connect(process.env.MONGODB_URI 
-    || "mongodb://localhost:27017/recipe_db")
+mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.error("MongoDB connection error:", err))
 
